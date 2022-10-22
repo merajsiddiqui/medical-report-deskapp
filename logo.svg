@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
+ <defs>
+  <linearGradient id="d" x1=".46484" y1=".40234" y2="1">
+   <stop stop-color="#ffaa56" stop-opacity=".996" offset="0"/>
+   <stop stop-color="#7f3f00" stop-opacity=".996" offset=".52344"/>
+   <stop stop-opacity=".996" offset="1"/>
+  </linearGradient>
+  <linearGradient id="e" x1=".35547" y1=".25" y2="1">
+   <stop stop-color="#ffaa56" stop-opacity=".996" offset="0"/>
+   <stop stop-color="#7f3f00" stop-opacity=".996" offset=".52344"/>
+   <stop stop-opacity=".996" offset="1"/>
+  </linearGradient>
+  <linearGradient id="a" x1=".37109" y1=".23438" y2="1">
+   <stop stop-color="#ffaa56" stop-opacity=".996" offset="0"/>
+   <stop stop-color="#7f3f00" stop-opacity=".996" offset=".44922"/>
+   <stop stop-opacity=".996" offset=".98828"/>
+  </linearGradient>
+ </defs>
+ <g font-family="Arial" stroke-width="0">
+  <g stroke-dasharray="null" stroke-linejoin="null" text-anchor="middle">
+   <ellipse cx="325" cy="250" rx="185" ry="183.5" stroke="url(#a)"/>
+   <text transform="matrix(14.429 0 0 10.5 -859.43 -1985.5)" x="71" y="231" font-size="24" opacity=".5" stroke="#096388"/>
+   <g stroke="url(#a)">
+    <ellipse cx="325" cy="250" rx="178" ry="178" fill="#fff"/>
+    <ellipse cx="325" cy="250" rx="168" ry="168"/>
+   </g>
+   <text transform="matrix(1.0332 0 0 .97808 110.22 33.087)" x="70.032105" y="231" font-size="24" opacity=".5" stroke="#096388"/>
+  </g>
+  <g fill="#fff">
+   <path d="m305.19 83.935c14.778 18.967 21.548 40.944 8.7581 69.816s-46.498 74.093-73.65 122.54c-54.303 96.885 63.076 145.72 72.757 146.67 9.6801 0.94522-47.194-37.021-29.194-94.679s59.476-90.11 71.244-134.13c11.768-44.016-79.473-148.15-49.916-110.21z" stroke="url(#d)" stroke-linejoin="round"/>
+   <g stroke-linejoin="null">
+    <path d="m370.91 198.12c2.9461 6.2393 4.3242 17.645 1.0516 31.108-3.2718 13.462-7.8583 23.481-17.95 39.889-5.0469 8.2032-16.43 23.964-22.316 33.066-5.8858 9.1032-7.7271 11.55-17.284 29.047-19.114 34.993 19.403 69.521 12.124 57.648-7.2788-11.872 2.9-34.994 13.107-50.5 10.206-15.507 17.111-22.717 27.069-37.698 9.9573-14.981 19.982-38.508 20.058-51.531 0.075836-13.024-0.63211-17.172-5.5697-31.176-4.9386-14.006-16.182-32.332-10.288-19.853z" stroke="url(#e)"/>
+    <path d="m346.23 417.43c-4.2293 8.1411-5.4363-17.14 2.092-39.025s22.369-34.517 38.032-61.837c7.8323-13.659 14.536-27.395 17.249-39.632 2.7145-12.237 2.5566-22.683-1.1009-29.184-7.315-13 0.255-1.104 3.8935 4.5002s3.7528 6.4719 6.0617 10.58c2.3098 4.1079 3.83 7.9341 4.5261 9.9834 0.69611 2.0492 3.0912 7.0938 3.8862 21.487 0.79504 14.393-8.4468 48.8-39.393 79.813-30.946 31.014-31.016 35.173-35.246 43.314z" stroke="url(#a)" stroke-dasharray="null"/>
+   </g>
+  </g>
+ </g>
+</svg>

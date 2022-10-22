@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+  <link rel="stylesheet" href="style.css">
+  <title>DocPres</title>
+</head>
+
+<body>
+
+  <header>
+    <img src="logo.svg" alt="" class="logo">
+    <h1 class="heading-primary">Ali Health Care Centre</h1>
+    <div class="number">
+      +91-9911321705
+    </div>
+  </header>
+
+  <div class="container">
+
+    <form action="" class="form">
+      <div class="patient-name">
+        <div class="title">
+          <select name="" id="">
+            <option value="choose">- - - Choose Title - - -</option>
+            <option class="op-1" value="mr">Mr.</option>
+            <option value="mrs">Mrs.</option>
+            <option value="miss">Miss.</option>
+          </select>
+        </div>
+      </div>
+
+      <input class="age" type="number" name="" id="" placeholder="Patient Age">
+
+      <input class="name" type="text" placeholder=" Patient Full Name">
+      <select class="gender" name="" id="">
+        <option value="choose">- - - Gender - - -</option>
+        <option class="op-1" value="male">Male</option>
+        <option value="mrs">Female</option>
+        <option value="miss">Transgender</option>
+      </select>
+
+
+      <div class="patient-condtion">
+        <div class="readings">
+          <label for="temp">Temprature</label>
+          <input type="text" id="temp">
+          <label for="pulse">Pulse</label>
+          <input type="text" id="pulse">
+          <label for="weght">Weight</label>
+          <input type="text" id="weight" id="weight">
+          <label for="spo">SPO<sub>2</sub></label>
+          <input type="text" id="spo">
+        </div>
+        <div class="medical-history">
+          <label for="">Medical History & Complaints</label>
+          <textarea name="" id="" cols="30" rows="10" placeholder="Medical History & Complaints"></textarea>
+        </div>
+
+
+      </div>
+
+      <div class="prescription">
+        <button class="add">ADD<span>+</span></button>
+      </div>
+
+    </form>
+  </div>
+
+
+</body>
+<script src="./renderer.js"></script>
+
+</html>
