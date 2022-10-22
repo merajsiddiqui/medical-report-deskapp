@@ -23,18 +23,18 @@
   <div class="container">
 
     <form action="" class="form">
-      <div class="patient-name">
-        <div class="title">
-          <select name="" id="">
-            <option value="choose">- - - Choose Title - - -</option>
-            <option class="op-1" value="mr">Mr.</option>
-            <option value="mrs">Mrs.</option>
-            <option value="miss">Miss.</option>
-          </select>
-        </div>
+      <!-- <div class="patient-name"> -->
+      <div class="title">
+        <select name="" id="">
+          <option value="choose">- - - Choose Title - - -</option>
+          <option class="op-1" value="mr">Mr.</option>
+          <option value="mrs">Mrs.</option>
+          <option value="miss">Miss.</option>
+        </select>
       </div>
+      <!-- </div> -->
 
-      <input class="age" type="number" name="" id="" placeholder="Patient Age">
+      <input class="age" type="number" name="" id="" placeholder="Patient Age...">
 
       <input class="name" type="text" placeholder=" Patient Full Name">
       <select class="gender" name="" id="">
@@ -65,7 +65,17 @@
       </div>
 
       <div class="prescription">
-        <button class="add">ADD<span>+</span></button>
+
+        <div class="add">
+          <span class="add-span">Add</span>
+          <!-- <span class="plus-span">+</span> -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="plus-span">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+
+        </div>
+
       </div>
 
     </form>

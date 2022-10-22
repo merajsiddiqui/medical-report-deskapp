@@ -52,19 +52,15 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem 4rem;
-  /* align-content: center;
-  justify-content: center; */
 }
 
 input[type="text"],
-input[type="number"],
-input[type="date"] {
-  font-size: 1.6rem;
-  padding: 1.2rem 2rem;
+input[type="number"] {
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
   border-radius: 8px;
-  box-shadow: inset 2px 2px 4px 0 rgb(0, 0, 0, 0.1),
-    2px 2px 4px 0 rgb(0, 0, 0, 0.1);
-  border: 0;
+  box-shadow: 2px 2px 4px 0 rgb(0, 0, 0, 0.1);
+  border: 0.5px solid grey;
 }
 
 label {
@@ -78,46 +74,13 @@ select {
   padding: 1rem 2rem;
 }
 
-.patient-name {
-  /* grid-column: 1/-1; */
-  display: flex;
-  gap: 4rem;
-}
-
-.name {
-  font-size: 1.6rem;
-  /* width: 100%; */
-}
-
 .age {
   justify-self: end;
 }
 
 .title {
-  /* grid-column: 1/-1; */
   font-size: 1.6rem;
   border-radius: 8px;
-}
-
-.medical-history {
-  font-size: 1.6rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  /* grid-column: 1/-1; */
-}
-
-::placeholder {
-  font-size: 1.6rem;
-}
-textarea {
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: black;
-  height: 18rem;
-  padding: 1.6rem 0 0 01.6rem;
-  border-radius: 8px;
-  resize: none;
 }
 
 .patient-condtion {
@@ -127,8 +90,46 @@ textarea {
   justify-content: space-between;
 }
 
+textarea {
+  font-weight: 400;
+  color: black;
+  height: 22rem;
+  width: 40rem;
+  padding: 1.6rem 0 0 1.6rem;
+  border-radius: 8px;
+  resize: none;
+  font-family: "Times New Roman", serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.medical-history {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+::placeholder {
+  font-size: 1.6rem;
+}
+
 .readings {
   display: grid;
-  grid-template-columns: 1fr 1.36fr;
+  grid-template-columns: 1fr 2fr;
   align-items: center;
+}
+
+.add {
+  font-size: 1.6rem;
+  border: 2px solid grey;
+  display: flex;
+  align-items: center;
+  width: 20%;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+.add-span {
+  padding: 1rem;
+  user-select: none;
+  font-weight: bold;
 }
