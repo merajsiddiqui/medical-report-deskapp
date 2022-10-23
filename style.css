@@ -155,9 +155,10 @@ textarea {
   fill: rgb(11, 184, 16);
 }
 
-.pre {
+.pres {
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
 .medicine-name {
