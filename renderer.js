@@ -2,14 +2,15 @@ const addBtn = document.querySelector(".add");
 
 addBtn.addEventListener("click", function () {
   const html = `<div class="pre">
-    <select>
+    <select class="medicine-type">
       <option>Tablet</option>
       <option>Inject.</option>
       <option>Syrup</option>
     </select>
-    <input type="text" placeHolder="Name">
-    <input type="text" placeholder="Dose">
-    <input type="number" placeholder="Quantity">
+    <input class="medicine-name" type="text" placeHolder="Name">
+    <input class="medicine-dose" type="text" placeholder="Dose">
+    <input class="medicine-quantity" type="number" placeholder="Quantity">
+    <button><button>
   </div>`;
 
   const pres = document.querySelector(".prescription");
