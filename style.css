@@ -148,26 +148,20 @@ textarea {
   display: flex;
   gap: 2rem;
   flex-direction: column;
-  justify-content: center;
 }
 
 .plus {
   width: 3.2rem;
-}
-
-svg {
   fill: rgb(11, 184, 16);
 }
 
 .pre {
   display: flex;
   gap: 2rem;
-  /* flex-grow: 0; */
-  /* justify-content: space-between; */
 }
 
 .medicine-name {
-  width: 40%;
+  width: 30%;
 }
 .medicine-dose {
   width: 20%;
@@ -178,4 +172,9 @@ svg {
 
 .medicine-type {
   width: 20%;
+}
+
+.delete-element {
+  width: 3.2rem;
+  cursor: pointer;
 }
