@@ -22,7 +22,7 @@ const createNode = function (count) {
 };
 
 const append = function (ele, pos, i) {
-  pos.append(ele);
+  pos.prepend(ele);
   const dltbtn = document.getElementById(`dltbtn-${i - 1}`);
   dltbtn.addEventListener("click", function () {
     ele.remove();

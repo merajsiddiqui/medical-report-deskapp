@@ -127,7 +127,6 @@ textarea {
 } */
 
 .add {
-  /* margin-left: 4rem; */
   font-size: 1.6rem;
   border: 2px solid grey;
   display: flex;
@@ -178,4 +177,20 @@ textarea {
 .delete-element {
   width: 3.2rem;
   cursor: pointer;
+}
+
+.footer {
+  width: 90%;
+  font-size: 2rem;
+  color: rgba(8, 34, 201, 0.742);
+
+  border-top: 2px dashed black;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 4rem;
+  text-align: center;
+  /* background-color: lightblue; */
+  margin: 2rem auto;
+  text-transform: uppercase;
+  gap: 1rem;
 }
