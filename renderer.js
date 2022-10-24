@@ -1,3 +1,6 @@
+// import {pdf} from jsPDF
+const jspdf = require("jsPDF");
+
 const addBtn = document.querySelector(".add");
 const advc = document.querySelector(".prescription");
 
@@ -36,3 +39,14 @@ addBtn.addEventListener("click", function () {
   count++;
   append(pres, advc, count);
 });
+
+let obj;
+
+setTimeout(() => {
+  console.log("world");
+  obj = new jspdf("landscape");
+  obj.text("Sample Table", 20, 20);
+  obj.save("example.pdf");
+}, 5000);
+console.log("hello");
+console.log(jspdf);
