@@ -68,7 +68,7 @@ const getMedicine = function () {
 
   console.log(lineHeight);
   let pos = 3.8;
-  if (lineHeight + 2.2 > pos) pos = lineHeight + 2.8;
+  if (lineHeight + 2.2 > pos) pos = lineHeight + 2.9;
 
   medicines.forEach((ele, i) => {
     const mName = ele.querySelector(".medicine-name").value;
@@ -79,6 +79,18 @@ const getMedicine = function () {
     doc.text(0.5, pos, `${i + 1}. ${mType} ${mName}, ${mDose}`);
     pos += 0.3;
   });
+
+  //label
+  doc.setFontSize(13.5);
+  const text = "Medical History and Complaints";
+  doc.setFont(text, "bold");
+  doc.text(4, 2.1, text);
+
+  doc.text(
+    1,
+    3.8 > lineHeight + 2.8 ? 3.8 : lineHeight + 2.6,
+    "Medicines & Adv."
+  );
 };
 
 let fullName, title, age, gender, temp, pulse, weight, spo2, medicalhistory;
@@ -121,12 +133,6 @@ const getPdfReady = function () {
   //vertical line
   doc.setLineWidth(4 / 72);
   doc.line(2.5, 1.95, 2.5, lineHeight + 2.3);
-
-  //label
-  doc.setFontSize(13.5);
-  const text = "Medical History and Complaints";
-  doc.setFont(text, "bold");
-  doc.text(4, 2.1, text);
 };
 
 doc.setFontSize(30);
