@@ -1,8 +1,14 @@
-// import {pdf} from jsPDF
-const jspdf = require("jsPDF");
+const jspdf = require("jspdf").jsPDF;
 
 const addBtn = document.querySelector(".add");
 const advc = document.querySelector(".prescription");
+
+//////////////////////////////////////////////////////
+const pdfBtn = document.querySelector(".pdf-btn");
+
+const logo = document.querySelector(".logo");
+const clinicName = document.querySelector(".heading-primary");
+const num = document.querySelector(".number");
 
 const createNode = function (count) {
   const pres = document.createElement("div");
@@ -40,13 +46,30 @@ addBtn.addEventListener("click", function () {
   append(pres, advc, count);
 });
 
-let obj;
+///////////////////////////////////////////////////////
 
-setTimeout(() => {
-  console.log("world");
-  obj = new jspdf("landscape");
-  obj.text("Sample Table", 20, 20);
-  obj.save("example.pdf");
-}, 5000);
-console.log("hello");
-console.log(jspdf);
+let doc = new jspdf({ orientation: "p", unit: "in", format: "a4" }); //72 ppi,8.25 / 11.25 inch
+
+doc.setFontSize(30);
+
+//adding logo
+
+const img = new Image();
+img.addEventListener("load", function () {
+  doc.addImage(img, "png", 0.1, 0.3, 1.5, 1.1);
+});
+img.src = logo.getAttribute("src");
+
+//text
+doc.text(clinicName.textContent.toUpperCase(), 1.8, 1);
+
+doc.setFontSize(18);
+doc.text(num.textContent, 5, 0.3);
+
+let c = 0;
+
+pdfBtn.addEventListener("click", function () {
+  doc.save(`example${c}.pdf`);
+  console.log(doc.getFontSize());
+  c++;
+});

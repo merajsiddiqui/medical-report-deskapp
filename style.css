@@ -190,3 +190,16 @@ textarea {
   text-transform: uppercase;
   gap: 1rem;
 }
+
+.btn {
+  text-align: center;
+}
+
+.pdf-btn {
+  padding: 1rem 5rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  background-color: rgb(11, 184, 16);
+  color: white;
+  cursor: poi;
+}
