@@ -10,6 +10,21 @@ const logo = document.querySelector(".logo");
 const clinicName = document.querySelector(".heading-primary");
 const num = document.querySelector(".number");
 
+const inputTitle = document.querySelector("#name-title");
+const inputFullName = document.querySelector(".name");
+const inputAge = document.querySelector(".age");
+const inputGender = document.querySelector("#gender-option");
+const inputTemp = document.querySelector("#temp");
+const inputPulse = document.querySelector("#pulse");
+const inputWeight = document.querySelector("#weight");
+const inputSpo2 = document.querySelector("#spo");
+const legal = document.querySelector(".legal");
+const address = document.querySelector(".address");
+
+const inputHistory = document.querySelector(".history");
+
+console.log(inputTemp);
+
 const createNode = function (count) {
   const pres = document.createElement("div");
   pres.classList.add(`med-${count}`);
@@ -47,29 +62,65 @@ addBtn.addEventListener("click", function () {
 });
 
 ///////////////////////////////////////////////////////
-
 let doc = new jspdf({ orientation: "p", unit: "in", format: "a4" }); //72 ppi,8.25 / 11.25 inch
 
+let fullName, title, age, gender, temp, pulse, weight, spo2, medicalhistory;
+
+const getInputs = function () {
+  //name-title;
+  title = inputTitle.options[inputTitle.selectedIndex].value;
+  fullName = inputFullName.value;
+  age = inputAge.value;
+  gender = inputGender.options[inputGender.selectedIndex].value;
+  temp = inputTemp.value;
+  pulse = inputPulse.value;
+  weight = inputWeight.value;
+  spo2 = inputSpo2.value;
+  medicalhistory = inputHistory.value;
+};
+
+const getPdfReady = function () {
+  doc.text(`Name: ${title} ${fullName}`, 0.5, 2);
+  doc.text(`Age / Gender: ${age} / ${gender}`, 4.5, 2);
+
+  doc.text(`Temp: ${temp}`, 0.5, 2.5);
+  doc.text(`Pulse: ${pulse}`, 0.5, 2.8);
+  doc.text(`${document.querySelector(".sub").textContent}: ${spo2}`, 0.5, 3.1);
+  doc.text(`Weight: ${weight}`, 0.5, 3.4);
+};
+
 doc.setFontSize(30);
-
 //adding logo
-
 const img = new Image();
 img.addEventListener("load", function () {
   doc.addImage(img, "png", 0.1, 0.3, 1.5, 1.1);
 });
 img.src = logo.getAttribute("src");
 
-//text
+// predefined text
 doc.text(clinicName.textContent.toUpperCase(), 1.8, 1);
-
-doc.setFontSize(18);
+doc.setFontSize(12);
 doc.text(num.textContent, 5, 0.3);
+doc.text(legal.textContent.toUpperCase(), 2.3, 10.75);
+
+const [line1, line2] = address.textContent.toUpperCase().split("/");
+
+doc.text(line1, 1, 11.05);
+doc.text(line2, 3.3, 11.3);
+
+//line
+
+doc.setLineWidth(1 / 72);
+doc.line(0.5, 1.5, 7.75, 1.5);
+
+doc.line(0.5, 10.25, 7.75, 10.25);
 
 let c = 0;
-
 pdfBtn.addEventListener("click", function () {
-  doc.save(`example${c}.pdf`);
+  getInputs();
+  getPdfReady();
   console.log(doc.getFontSize());
+  doc.save(`example${c}.pdf`);
+
   c++;
 });

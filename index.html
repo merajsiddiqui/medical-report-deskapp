@@ -27,11 +27,11 @@
     <form action="" class="form">
       <!-- <div class="patient-name"> -->
       <div class="title">
-        <select name="" id="">
-          <option value="choose">- - - Choose Title - - -</option>
-          <option class="op-1" value="mr">Mr.</option>
-          <option value="mrs">Mrs.</option>
-          <option value="miss">Miss.</option>
+        <select name="" id="name-title">
+          <option value="none" disabled selected>- - - Choose Title - - -</option>
+          <option class="op-1" value="Mr.">Mr.</option>
+          <option value="Mrs.">Mrs.</option>
+          <option value="Miss">Miss.</option>
         </select>
       </div>
       <!-- </div> -->
@@ -39,11 +39,11 @@
       <input class="age" type="number" name="" id="" placeholder="Patient Age...">
 
       <input class="name" type="text" placeholder=" Patient Full Name">
-      <select class="gender" name="" id="">
-        <option value="choose">- - - Gender - - -</option>
-        <option class="op-1" value="male">Male</option>
-        <option value="mrs">Female</option>
-        <option value="miss">Transgender</option>
+      <select class="gender" name="" id="gender-option">
+        <option value="none" selected disabled>- - - Gender - - -</option>
+        <option class="op-1" value="M">Male</option>
+        <option value="F">Female</option>
+        <option value="Trans.">Transgender</option>
       </select>
 
 
@@ -54,13 +54,14 @@
           <label for="pulse">Pulse</label>
           <input type="text" id="pulse">
           <label for="weght">Weight</label>
-          <input type="text" id="weight" id="weight">
-          <label for="spo">SPO<sub>2</sub></label>
+          <input type="text" id="weight">
+          <label class="sub" for="spo">SPO<sub>2</sub></label>
           <input type="text" id="spo">
         </div>
         <div class="medical-history">
           <label for="">Medical History & Complaints</label>
-          <textarea name="" id="" cols="30" rows="10" placeholder="Medical History & Complaints"></textarea>
+          <textarea class="history" name="" id="" cols="30" rows="10"
+            placeholder="Medical History & Complaints"></textarea>
         </div>
 
 
@@ -86,7 +87,7 @@
   <footer>
     <div class="footer">
       <p class="legal">not valid for medico-legal purpose</p>
-      <p class="address">f-26-27,shaheen bagh, near icici atm, nala road, near 40 futa road, okhla delhi-110025</p>
+      <p class="address">f-26-27,shaheen bagh, near icici atm, nala road, near 40 futa road,/okhla delhi-110025</p>
     </div>
 
   </footer>
