@@ -21,9 +21,9 @@ const inputSpo2 = document.querySelector("#spo");
 const legal = document.querySelector(".legal");
 const address = document.querySelector(".address");
 
-const inputHistory = document.querySelector(".history");
+const inputHistory = document.querySelector("#history");
 
-console.log(inputTemp);
+// console.log(inputTemp);
 
 const createNode = function (count) {
   const pres = document.createElement("div");
@@ -62,7 +62,7 @@ addBtn.addEventListener("click", function () {
 });
 
 ///////////////////////////////////////////////////////
-let doc = new jspdf({ orientation: "p", unit: "in", format: "a4" }); //72 ppi,8.25 / 11.25 inch
+let doc = new jspdf({ orientation: "p", unit: "in", format: [8.3, 11.7] }); //72 ppi,8.25 / 11.25 inch
 
 let fullName, title, age, gender, temp, pulse, weight, spo2, medicalhistory;
 
@@ -80,40 +80,51 @@ const getInputs = function () {
 };
 
 const getPdfReady = function () {
-  doc.text(`Name: ${title} ${fullName}`, 0.5, 2);
-  doc.text(`Age / Gender: ${age} / ${gender}`, 4.5, 2);
+  doc.text(`Name: ${title} ${fullName}`, 0.5, 1.8);
+  doc.text(`Age / Gender: ${age} / ${gender}`, 6.2, 1.8);
 
-  doc.text(`Temp: ${temp}`, 0.5, 2.5);
-  doc.text(`Pulse: ${pulse}`, 0.5, 2.8);
-  doc.text(`${document.querySelector(".sub").textContent}: ${spo2}`, 0.5, 3.1);
-  doc.text(`Weight: ${weight}`, 0.5, 3.4);
+  doc.text(`Temp: ${temp}`, 0.5, 2.4);
+  doc.text(`Pulse: ${pulse}`, 0.5, 2.7);
+  doc.text(`${document.querySelector(".sub").textContent}: ${spo2}`, 0.5, 3);
+  doc.text(`Weight: ${weight}`, 0.5, 3.3);
+
+  /////////////////////////////////////////////
+  const text = medicalhistory;
+
+  const lines = doc.splitTextToSize(text, 5);
+  doc.text(lines, 2.8, 2.4);
 };
 
 doc.setFontSize(30);
 //adding logo
 const img = new Image();
 img.addEventListener("load", function () {
-  doc.addImage(img, "png", 0.1, 0.3, 1.5, 1.1);
+  doc.addImage(img, "png", 0.1, 0.1, 1.5, 1.1);
 });
 img.src = logo.getAttribute("src");
 
 // predefined text
-doc.text(clinicName.textContent.toUpperCase(), 1.8, 1);
+doc.text(clinicName.textContent.toUpperCase(), 1.8, 0.8);
 doc.setFontSize(12);
-doc.text(num.textContent, 5, 0.3);
+doc.text(num.textContent, 5.76, 0.15);
 doc.text(legal.textContent.toUpperCase(), 2.3, 10.75);
 
-const [line1, line2] = address.textContent.toUpperCase().split("/");
+const [addLine1, addLine2] = address.textContent.toUpperCase().split("/");
 
-doc.text(line1, 1, 11.05);
-doc.text(line2, 3.3, 11.3);
+doc.text(addLine1, 1, 11.05);
+doc.text(addLine2, 3.3, 11.27);
 
 //line
 
 doc.setLineWidth(1 / 72);
-doc.line(0.5, 1.5, 7.75, 1.5);
+doc.line(0.5, 1.3, 7.8, 1.3);
 
-doc.line(0.5, 10.25, 7.75, 10.25);
+doc.line(0.5, 10.4, 7.8, 10.4);
+
+const width = doc.internal.pageSize.getWidth();
+const height = doc.internal.pageSize.getHeight();
+
+console.log(width, height);
 
 let c = 0;
 pdfBtn.addEventListener("click", function () {
