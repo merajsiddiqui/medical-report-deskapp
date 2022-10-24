@@ -1,0 +1,8 @@
+{
+    "directories": {
+      "output": "./release"
+    },
+    "asarUnpack": ["**/*.node"],
+    "buildDependenciesFromSource": true,
+    "npmRebuild": true
+  }
