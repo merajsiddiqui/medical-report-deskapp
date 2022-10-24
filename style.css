@@ -191,6 +191,10 @@ textarea {
   gap: 1rem;
 }
 
+.legal {
+  color: rgb(226, 96, 3);
+}
+
 .btn {
   text-align: center;
 }

@@ -1,7 +1,7 @@
 const jspdf = require("jspdf").jsPDF;
 
 const addBtn = document.querySelector(".add");
-const advc = document.querySelector(".prescription");
+const medicine = document.querySelector(".prescription");
 
 //////////////////////////////////////////////////////
 const pdfBtn = document.querySelector(".pdf-btn");
@@ -22,8 +22,6 @@ const legal = document.querySelector(".legal");
 const address = document.querySelector(".address");
 
 const inputHistory = document.querySelector("#history");
-
-// console.log(inputTemp);
 
 const createNode = function (count) {
   const pres = document.createElement("div");
@@ -46,7 +44,7 @@ const createNode = function (count) {
 };
 
 const append = function (ele, pos, i) {
-  pos.prepend(ele);
+  pos.append(ele);
   const dltbtn = document.getElementById(`dltbtn-${i - 1}`);
   dltbtn.addEventListener("click", function () {
     ele.remove();
@@ -58,11 +56,30 @@ let count = 0;
 addBtn.addEventListener("click", function () {
   const pres = createNode(count);
   count++;
-  append(pres, advc, count);
+  append(pres, medicine, count);
 });
 
 ///////////////////////////////////////////////////////
-let doc = new jspdf({ orientation: "p", unit: "in", format: [8.3, 11.7] }); //72 ppi,8.25 / 11.25 inch
+let doc = new jspdf({ orientation: "p", unit: "in", format: [8.3, 11.7] }); //72 ppi,8.7 / 11.3 inch
+let lineHeight;
+
+const getMedicine = function () {
+  const medicines = document.querySelectorAll(".pres");
+
+  console.log(lineHeight);
+  let pos = 3.8;
+  if (lineHeight + 2.2 > pos) pos = lineHeight + 2.8;
+
+  medicines.forEach((ele, i) => {
+    const mName = ele.querySelector(".medicine-name").value;
+    const mDose = ele.querySelector(".medicine-dose").value;
+    const mOptions = ele.querySelector(".medicine-type");
+    const mType = mOptions.options[mOptions.selectedIndex].value;
+
+    doc.text(0.5, pos, `${i + 1}. ${mType} ${mName}, ${mDose}`);
+    pos += 0.3;
+  });
+};
 
 let fullName, title, age, gender, temp, pulse, weight, spo2, medicalhistory;
 
@@ -79,6 +96,8 @@ const getInputs = function () {
   medicalhistory = inputHistory.value;
 };
 
+//getting pdf ready
+
 const getPdfReady = function () {
   doc.text(`Name: ${title} ${fullName}`, 0.5, 1.8);
   doc.text(`Age / Gender: ${age} / ${gender}`, 6.2, 1.8);
@@ -88,14 +107,30 @@ const getPdfReady = function () {
   doc.text(`${document.querySelector(".sub").textContent}: ${spo2}`, 0.5, 3);
   doc.text(`Weight: ${weight}`, 0.5, 3.3);
 
-  /////////////////////////////////////////////
-  const text = medicalhistory;
-
-  const lines = doc.splitTextToSize(text, 5);
+  //medical history and complaints
+  const lines = doc.splitTextToSize(medicalhistory, 5);
   doc.text(lines, 2.8, 2.4);
+
+  lineHeight = (doc.getLineHeight() * lines.length) / 72;
+  console.log(lineHeight);
+
+  if (lineHeight < 1.1) {
+    lineHeight = 1.2;
+  }
+
+  //vertical line
+  doc.setLineWidth(4 / 72);
+  doc.line(2.5, 1.95, 2.5, lineHeight + 2.3);
+
+  //label
+  doc.setFontSize(13.5);
+  const text = "Medical History and Complaints";
+  doc.setFont(text, "bold");
+  doc.text(4, 2.1, text);
 };
 
 doc.setFontSize(30);
+
 //adding logo
 const img = new Image();
 img.addEventListener("load", function () {
@@ -114,24 +149,27 @@ const [addLine1, addLine2] = address.textContent.toUpperCase().split("/");
 doc.text(addLine1, 1, 11.05);
 doc.text(addLine2, 3.3, 11.27);
 
-//line
-
+//horizontal lines
 doc.setLineWidth(1 / 72);
 doc.line(0.5, 1.3, 7.8, 1.3);
-
 doc.line(0.5, 10.4, 7.8, 10.4);
+
+//vertical lines
 
 const width = doc.internal.pageSize.getWidth();
 const height = doc.internal.pageSize.getHeight();
 
 console.log(width, height);
 
-let c = 0;
+const now = new Date();
+
+// const pdfName = new Intl.DateTimeFormat("hi-IN").format(now);
+const pdfName = Date.now();
+
 pdfBtn.addEventListener("click", function () {
   getInputs();
   getPdfReady();
+  getMedicine();
   console.log(doc.getFontSize());
-  doc.save(`example${c}.pdf`);
-
-  c++;
+  doc.save(`${pdfName}.pdf`);
 });
