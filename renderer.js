@@ -1,4 +1,5 @@
 const jspdf = require("jspdf").jsPDF;
+const table = require("jspdf-autotable");
 
 const addBtn = document.querySelector(".add");
 const medicine = document.querySelector(".prescription");
@@ -10,6 +11,9 @@ const logo = document.querySelector(".logo");
 const clinicName = document.querySelector(".heading-primary");
 const num = document.querySelector(".number");
 
+const feeOptions = document.querySelector("#fees");
+const feecontainer = document.querySelector(".fee-container");
+
 const inputTitle = document.querySelector("#name-title");
 const inputFullName = document.querySelector(".name");
 const inputAge = document.querySelector(".age");
@@ -20,7 +24,6 @@ const inputWeight = document.querySelector("#weight");
 const inputSpo2 = document.querySelector("#spo");
 const legal = document.querySelector(".legal");
 const address = document.querySelector(".address");
-
 const inputHistory = document.querySelector("#history");
 
 const createPresFields = function (count) {
@@ -92,6 +95,26 @@ const getMedicine = function () {
   doc.text(4, 2.1, text);
 
   doc.text(4, labelPos + 0.2, "Medicines & Adv.");
+};
+
+const getFeeDetails = function () {
+  const inputs = feecontainer.querySelectorAll("input");
+
+  let b = [];
+  inputs.forEach((ele, i) => {
+    // console.log(`${i + 1}.  ${ele.getAttribute("for")}---->${ele.value}`);
+    const tempArr = [];
+    tempArr.push(`${ele.getAttribute("for")}`);
+    tempArr.push(`${ele.value}`);
+    b.push(tempArr);
+  });
+
+  doc.autoTable({
+    startX: 1,
+    startY: 9,
+    head: [["Fees Type", "Fees Amount"]],
+    body: b,
+  });
 };
 
 let fullName, title, age, gender, temp, pulse, weight, spo2, medicalhistory;
@@ -178,23 +201,19 @@ pdfBtn.addEventListener("click", function () {
   getInputs();
   getPdfReady();
   getMedicine();
+  getFeeDetails();
   console.log(doc.getFontSize());
   doc.save(`${pdfName}.pdf`);
 });
 
-const feeOptions = document.querySelector("#fees");
-// const consult = document.querySelector(".consultation-fee");
-const feecontainer = document.querySelector(".fee-container");
-
-const consult = feeOptions.options[1];
 // console.log(consult);
 
 feeOptions.addEventListener("change", function (e) {
-  console.log(e);
   const field = document.createElement("input");
   field.type = "text";
   const l = document.createElement("label");
   l.innerText = e.target[e.target.selectedIndex].innerText;
+  field.setAttribute("for", l.innerText);
 
   feecontainer.append(l);
   feecontainer.append(field);
