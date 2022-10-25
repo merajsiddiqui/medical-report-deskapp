@@ -190,7 +190,7 @@ const consult = feeOptions.options[1];
 // console.log(consult);
 
 feeOptions.addEventListener("change", function (e) {
-  console.log(e.target);
+  console.log(e);
   const field = document.createElement("input");
   field.type = "text";
   const l = document.createElement("label");
@@ -198,4 +198,15 @@ feeOptions.addEventListener("change", function (e) {
 
   feecontainer.append(l);
   feecontainer.append(field);
+  e.target[e.target.selectedIndex].hidden = true;
+  const optionArr = [...e.target];
+
+  const optionCount = optionArr.reduce(
+    (acc, ele) => (ele.hidden == true ? acc + 1 : acc),
+    0
+  );
+
+  if (optionCount === e.target.length - 1) feeOptions.remove();
+
+  e.target[0].selected = true;
 });
