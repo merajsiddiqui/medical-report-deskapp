@@ -23,7 +23,7 @@ const address = document.querySelector(".address");
 
 const inputHistory = document.querySelector("#history");
 
-const createNode = function (count) {
+const createPresFields = function (count) {
   const pres = document.createElement("div");
   pres.classList.add(`med-${count}`);
   pres.classList.add("pres");
@@ -54,7 +54,7 @@ const append = function (ele, pos, i) {
 let count = 0;
 
 addBtn.addEventListener("click", function () {
-  const pres = createNode(count);
+  const pres = createPresFields(count);
   count++;
   append(pres, medicine, count);
 });
@@ -180,4 +180,22 @@ pdfBtn.addEventListener("click", function () {
   getMedicine();
   console.log(doc.getFontSize());
   doc.save(`${pdfName}.pdf`);
+});
+
+const feeOptions = document.querySelector("#fees");
+// const consult = document.querySelector(".consultation-fee");
+const feecontainer = document.querySelector(".fee-container");
+
+const consult = feeOptions.options[1];
+// console.log(consult);
+
+feeOptions.addEventListener("change", function (e) {
+  console.log(e.target);
+  const field = document.createElement("input");
+  field.type = "text";
+  const l = document.createElement("label");
+  l.innerText = e.target[e.target.selectedIndex].innerText;
+
+  feecontainer.append(l);
+  feecontainer.append(field);
 });

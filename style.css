@@ -43,7 +43,7 @@ h1 {
 .container {
   max-width: 95rem;
   margin: 0 auto;
-  padding: 4.9rem;
+  padding: 4.9rem 4.9rem 2rem 4.9rem;
   display: flex;
   flex-direction: column;
   gap: 5rem;
@@ -112,6 +112,10 @@ textarea {
   gap: 1rem;
 }
 
+.medical-history label {
+  font-size: 2rem;
+}
+
 ::placeholder {
   font-size: 1.6rem;
 }
@@ -130,9 +134,11 @@ textarea {
   width: 8rem;
   border-radius: 2rem;
   cursor: pointer;
+  /* margin-left: 8rem; */
 }
 
-.add-span {
+.add-label {
+  text-transform: capitalize;
   padding: 0.5rem 1rem;
   user-select: none;
   font-weight: bold;
@@ -206,4 +212,26 @@ textarea {
   background-color: rgb(11, 184, 16);
   color: white;
   cursor: poi;
+}
+
+#fees {
+  margin-bottom: 3rem;
+}
+
+.fee-label {
+  text-align: center;
+  font-size: 2rem;
+  margin: 3rem auto;
+}
+
+.fee-container {
+  gap: 1rem;
+  margin: 1rem 0;
+  /* margin-left: 9.9rem; */
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+
+  gap: 2rem;
 }
