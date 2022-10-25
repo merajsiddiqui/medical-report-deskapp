@@ -63,10 +63,10 @@ addBtn.addEventListener("click", function () {
 });
 
 ///////////////////////////////////////////////////////
-let doc = new jspdf({ orientation: "p", unit: "in", format: [8.3, 11.7] }); //72 ppi,8.7 / 11.3 inch
+
 let lineHeight;
 
-const getMedicine = function () {
+const getMedicine = function (doc) {
   const medicines = document.querySelectorAll(".pres");
 
   console.log(lineHeight);
@@ -97,7 +97,7 @@ const getMedicine = function () {
   doc.text(4, labelPos + 0.2, "Medicines & Adv.");
 };
 
-const getFeeDetails = function () {
+const getFeeDetails = function (doc) {
   const inputs = feecontainer.querySelectorAll("input");
 
   let b = [];
@@ -111,7 +111,7 @@ const getFeeDetails = function () {
 
   doc.autoTable({
     startX: 1,
-    startY: 9,
+    startY: 8.5,
     head: [["Fees Type", "Fees Amount"]],
     body: b,
   });
@@ -134,7 +134,7 @@ const getInputs = function () {
 
 //getting pdf ready
 
-const getPdfReady = function () {
+const getPdfReady = function (doc) {
   doc.text(`Name: ${title} ${fullName}`, 0.5, 1.8);
   doc.text(`Age / Gender: ${age} / ${gender}`, 6.2, 1.8);
 
@@ -159,50 +159,50 @@ const getPdfReady = function () {
   doc.line(2.5, 1.95, 2.5, lineHeight + 2.3);
 };
 
-doc.setFontSize(30);
+const others = function (doc) {
+  doc.setFontSize(30);
 
-//adding logo
-const img = new Image();
-img.addEventListener("load", function () {
-  doc.addImage(img, "png", 0.1, 0.1, 1.5, 1.1);
-});
-img.src = logo.getAttribute("src");
+  //adding logo
+  const img = new Image();
+  img.addEventListener("load", function () {
+    doc.addImage(img, "png", 0.1, 0.1, 1.5, 1.1);
+  });
+  img.src = logo.getAttribute("src");
 
-// predefined text
-doc.text(clinicName.textContent.toUpperCase(), 1.8, 0.8);
-doc.setFontSize(12);
-doc.text(num.textContent, 5.76, 0.15);
-doc.text(legal.textContent.toUpperCase(), 2.3, 10.75);
+  // predefined text
+  doc.text(clinicName.textContent.toUpperCase(), 1.8, 0.8);
+  doc.setFontSize(12);
+  doc.text(num.textContent, 5.76, 0.15);
+  doc.text(legal.textContent.toUpperCase(), 2.3, 10.75);
 
-const [addLine1, addLine2] = address.textContent.toUpperCase().split("/");
+  const [addLine1, addLine2] = address.textContent.toUpperCase().split("/");
 
-doc.text(addLine1, 1, 11.05);
-doc.text(addLine2, 3.3, 11.27);
+  doc.text(addLine1, 1, 11.05);
+  doc.text(addLine2, 3.3, 11.27);
 
-//horizontal lines
-doc.setLineWidth(1 / 72);
-doc.line(0.5, 1.3, 7.8, 1.3);
-doc.line(0.5, 10.4, 7.8, 10.4);
+  //horizontal lines
+  doc.setLineWidth(1 / 72);
+  doc.line(0.5, 1.3, 7.8, 1.3);
+  doc.line(0.5, 10.4, 7.8, 10.4);
 
-//vertical lines
-
-const width = doc.internal.pageSize.getWidth();
-const height = doc.internal.pageSize.getHeight();
-
-console.log(width, height);
-
-console.log(doc.getTextDimensions("Afzal Nomanikhan"));
-const now = new Date();
-
+  //vertical lines
+  const width = doc.internal.pageSize.getWidth();
+  const height = doc.internal.pageSize.getHeight();
+};
+// console.log(width, height);
+// const now = new Date();
 // const pdfName = new Intl.DateTimeFormat("hi-IN").format(now);
-const pdfName = Date.now();
 
 pdfBtn.addEventListener("click", function () {
+  const pdfName = Date.now();
+  let doc = new jspdf({ orientation: "p", unit: "in", format: [8.3, 11.7] }); //72 ppi,8.7 / 11.3 inch
+  others(doc);
   getInputs();
-  getPdfReady();
-  getMedicine();
-  getFeeDetails();
+  getPdfReady(doc);
+  getMedicine(doc);
+  getFeeDetails(doc);
   console.log(doc.getFontSize());
+  console.log(pdfName);
   doc.save(`${pdfName}.pdf`);
 });
 
