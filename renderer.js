@@ -30,7 +30,7 @@ const createNode = function (count) {
 
   pres.innerHTML = `<select class="medicine-type">
       <option>Tablet</option>
-      <option>Inject.</option>
+      <option>Inject </option>
       <option>Syrup</option>
     </select>
     <input class="medicine-name" type="text" placeHolder="Name">
@@ -70,14 +70,19 @@ const getMedicine = function () {
   let pos = 3.8;
   if (lineHeight + 2.2 > pos) pos = lineHeight + 2.9;
 
+  const labelPos = pos;
+
   medicines.forEach((ele, i) => {
     const mName = ele.querySelector(".medicine-name").value;
     const mDose = ele.querySelector(".medicine-dose").value;
     const mOptions = ele.querySelector(".medicine-type");
-    const mType = mOptions.options[mOptions.selectedIndex].value;
-
-    doc.text(0.5, pos, `${i + 1}. ${mType} ${mName}, ${mDose}`);
-    pos += 0.3;
+    let mType = mOptions.options[mOptions.selectedIndex].value;
+    doc.text(
+      2.6,
+      pos + 0.5,
+      `${i + 1}.   ${mType}.  ${mName} ------- ${mDose}`
+    );
+    pos += 0.2;
   });
 
   //label
@@ -86,11 +91,7 @@ const getMedicine = function () {
   doc.setFont(text, "bold");
   doc.text(4, 2.1, text);
 
-  doc.text(
-    1,
-    3.8 > lineHeight + 2.8 ? 3.8 : lineHeight + 2.6,
-    "Medicines & Adv."
-  );
+  doc.text(4, labelPos + 0.2, "Medicines & Adv.");
 };
 
 let fullName, title, age, gender, temp, pulse, weight, spo2, medicalhistory;
@@ -167,6 +168,7 @@ const height = doc.internal.pageSize.getHeight();
 
 console.log(width, height);
 
+console.log(doc.getTextDimensions("Afzal Nomanikhan"));
 const now = new Date();
 
 // const pdfName = new Intl.DateTimeFormat("hi-IN").format(now);
