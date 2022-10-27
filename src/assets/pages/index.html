@@ -16,42 +16,97 @@
             <!-- Sidebar-->
             <div class="border-end bg-white" id="sidebar-wrapper">
                 <div class="sidebar-heading border-bottom bg-light">Medical Report</div>
-                <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">About</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Create New Report</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Previous Report</a>
+                <div class="list-group list-group-flush" id="menus">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="home-menu-tab" data-bs-target="#home-tab" data-bs-toggle="tab" href="#home" role="tab" >About</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="create-menu-tab" data-bs-target="#create-tab" data-bs-toggle="tab" href="#create" role="tab" >Create New Report</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="previous-menu-tab" data-bs-target="#previous-tab" data-bs-toggle="tab" href="#previous" role="tab" >Previous Report</a>
                 </div>
             </div>
             <!-- Page content wrapper-->
             <div id="page-content-wrapper">
-                <!-- Top navigation-->
-                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                    <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                                <li class="nav-item active"><a class="nav-link">MedicalReport v1.0</a></li>
-                            </ul>
-                        </div>
+
+
+                <div class="tab-content">
+                    
+
+                    <!-- Home content-->
+                    <div class="container-fluid tab-pane active" role="tabpanel" aria-labelledby="home-tab" id="home-tab" >
+                        <h1 class="mt-4">Simple Sidebar</h1>
+                        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                        <p>
+                            Make sure to keep all page content within the
+                            <code>#page-content-wrapper</code>
+                            . The top navbar is optional, and just for demonstration. Just create an element with the
+                            <code>#sidebarToggle</code>
+                            ID which will toggle the menu when clicked.
+                        </p>
                     </div>
-                </nav>
-                <!-- Page content-->
-                <div class="container-fluid">
-                    <h1 class="mt-4">Simple Sidebar</h1>
-                    <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-                    <p>
-                        Make sure to keep all page content within the
-                        <code>#page-content-wrapper</code>
-                        . The top navbar is optional, and just for demonstration. Just create an element with the
-                        <code>#sidebarToggle</code>
-                        ID which will toggle the menu when clicked.
-                    </p>
+
+
+                    <div class="container-fluid tab-pane" role="tabpanel" aria-labelledby="create-tab" id="create-tab">
+                        <h1 class="mt-4">Create Sidebar</h1>
+                        <form class="form-floating">
+                            <div class="row g-2">
+                                <div class="col-md">
+                                  <div class="form-floating">
+                                    <input required name="name" type="text" class="form-control" id="floatingInputGrid" placeholder="Hello" >
+                                    <label for="floatingInputGrid">Patient's Name</label>
+                                  </div>
+                                </div>
+                                <div class="col-md">
+                                  <div class="form-floating">
+                                    <select class="form-select" id="floatingSelectGrid" name="gender" required aria-label="Floating label select example">
+                                      <option>Open this select menu</option>
+                                      <option value="M">Male</option>
+                                      <option value="F">Female</option>
+                                      <option value="NB">Non-Binary</option>
+                                    </select>
+                                    <label for="floatingSelectGrid">Gender</label>
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="form-floating">
+                                    <select class="form-select" id="floatingSelectGrid" name="gender" required aria-label="Floating label select example">
+                                        <option >Open this select menu</option>
+                                        <option value="Tab">Tablet</option>
+                                        <option value="Inj.">Injection</option>
+                                        <option value="Syp.">Syrup</option>
+                                    </select>
+                                    <label for="floatingSelectGrid">Type</label>
+                                </div>
+                                <input type="text" class="form-control form-floating" aria-label="Medicine Name">
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <div class="container-fluid tab-pane" role="tabpanel" aria-labelledby="previous-tab" id="previous-tab">
+                        <h1 class="mt-4">previous Sidebar</h1>
+                        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                        <p>
+                            Make sure to keep all page content within the
+                            <code>#page-content-wrapper</code>
+                            . The top navbar is optional, and just for demonstration. Just create an element with the
+                            <code>#sidebarToggle</code>
+                            ID which will toggle the menu when clicked.
+                        </p>
+                    </div>
+
+
+
+
                 </div>
             </div>
         </div>
+
+        <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
+        <script src="../js/jquery.js"></script>
         <script src="../js/scripts.js"></script>
+        <script>if (window.module) module = window.module;</script>
     </body>
 </html>

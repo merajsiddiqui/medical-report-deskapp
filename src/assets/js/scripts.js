@@ -1,26 +1,25 @@
-/*!
-* Start Bootstrap - Simple Sidebar v6.0.5 (https://startbootstrap.com/template/simple-sidebar)
-* Copyright 2013-2022 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
-*/
-// 
-// Scripts
-// 
+$(document).ready(() => {
+   
+    $('#menus li:last-child a').tab('show');
 
-window.addEventListener('DOMContentLoaded', event => {
 
-    // Toggle the side navigation
-    const sidebarToggle = document.body.querySelector('#sidebarToggle');
-    if (sidebarToggle) {
-        // Uncomment Below to persist sidebar toggle between refreshes
-        // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
-        //     document.body.classList.toggle('sb-sidenav-toggled');
-        // }
-        sidebarToggle.addEventListener('click', event => {
-            event.preventDefault();
-            document.body.classList.toggle('sb-sidenav-toggled');
-            localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
-        });
-    }
+    let prescriptionFormFiels = `
+    <div class="input-group mb-3">
+        <div class="form-floating">
+            <select class="form-select" id="floatingSelectGrid" name="gender" required aria-label="Floating label select example">
+                <option >Open this select menu</option>
+                <option value="Tab">Tablet</option>
+                <option value="Inj.">Injection</option>
+                <option value="Syp.">Syrup</option>
+            </select>
+            <label for="floatingSelectGrid">Type</label>
+        </div>
+        <input type="text" class="form-control" aria-label="Medicine Name">
+    </div>
+
+
+
+    `;
+
 
 });

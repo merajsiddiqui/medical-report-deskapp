@@ -24,7 +24,8 @@ export default class App {
             width: mainScreen.size.width,
             webPreferences : {
                 nodeIntegration: true,
-                contextIsolation: false
+                contextIsolation: false,
+                devTools:false
             }
         };
         App.AppWindow = new App.BrowserWindow(browserWindowOptions);
