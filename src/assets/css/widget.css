@@ -1,0 +1,125 @@
+/*Start vertical Wizard*/
+
+.verticalwiz {
+    display: block;
+    list-style: none;
+    position: relative;
+    width: 100%
+}
+
+.verticalwiz a:hover,.verticalwiz a:active,.verticalwiz a:focus {
+    text-decoration: none
+}
+
+.verticalwiz li {
+    display: block;
+    height: 100%;
+    min-height: 90px;
+    max-width: 215px;
+    width: 100%;
+}
+
+.verticalwiz li:before {
+    border-top: 3px solid #55606E;
+    content: "";
+    display: block;
+    font-size: 0;
+    overflow: auto;
+    position: relative;
+    top: 10px;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+    transform: rotate(90deg) translateY(87px);
+    left: 0;
+    max-width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+.verticalwiz li.complete .step {
+    background: #0aa66e;
+    padding: 1px 6px;
+    border: 3px solid #55606E
+}
+
+.verticalwiz li .step i {
+    font-size: 10px;
+    font-weight: 400;
+    position: relative;
+    top: -1.5px
+}
+
+.verticalwiz li .step {
+    background: #B2B5B9;
+    color: #fff;
+    display: inline;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 12px;
+    padding: 7px 13px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    line-height: normal;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    transition: all .1s linear 0s
+}
+
+.verticalwiz li.active .step,.verticalwiz li.active.complete .step {
+    background: #4CAF50;
+    color: #fff;
+    font-weight: 700;
+    padding: 7px 13px;
+    font-size: 15px;
+    border-radius: 50%;
+    border: 3px solid #7fe583
+}
+
+.verticalwiz li.complete .title,.verticalwiz li.active .title {
+    color: #2B3D53
+}
+
+.verticalwiz li .title {
+    display: inline;
+    font-size: 13px;
+    position: relative;
+    top: 0;
+}
+
+.rightab {
+    border: 1px solid #dedede;
+    border-radius: 3px;
+    padding: 30px;
+    box-shadow: 1px 1px 11px #ccc;
+    min-height: 320px;
+}
+
+@media  (min-width: 700px) and (max-width: 1199px){
+    .verticalwiz li:before{    
+        transform: rotate(90deg) translateY(65px);
+        max-width: 60%;
+    }
+}
+@media (max-width: 991px){
+    .verticalwiz li{
+        float: left;
+        width: 25%;
+        height: auto;
+        min-height: inherit;
+        margin-bottom: 20px;
+        max-width: inherit;
+        text-align: center;
+    }
+    .verticalwiz li:before{
+            transform: none;
+            max-width: inherit;
+            position: absolute;
+    }
+    .verticalwiz li .title{
+        margin-top: 10px;
+        text-align: center;
+        display: block;
+    }
+}
+/*End vertical Wizard*/

@@ -25,7 +25,7 @@ export default class App {
             webPreferences : {
                 nodeIntegration: true,
                 contextIsolation: false,
-                devTools:false
+                devTools:true
             }
         };
         App.AppWindow = new App.BrowserWindow(browserWindowOptions);

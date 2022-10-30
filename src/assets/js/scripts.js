@@ -1,7 +1,4 @@
 $(document).ready(() => {
-   
-    $('#menus li:last-child a').tab('show');
-
 
     let prescriptionFormFiels = `
     <div class="input-group mb-3">
