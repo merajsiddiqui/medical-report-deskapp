@@ -1,4 +1,3 @@
-/*Start vertical Wizard*/
 
 .verticalwiz {
     display: block;
@@ -95,7 +94,7 @@
     min-height: 320px;
 }
 
-@media  (min-width: 700px) and (max-width: 1199px){
+@media  (min-width: 992px) and (max-width: 1199px){
     .verticalwiz li:before{    
         transform: rotate(90deg) translateY(65px);
         max-width: 60%;
@@ -122,4 +121,3 @@
         display: block;
     }
 }
-/*End vertical Wizard*/

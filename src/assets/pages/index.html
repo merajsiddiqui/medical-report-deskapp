@@ -1,225 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Simple Sidebar - Start Bootstrap Template</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="../css/styles.css" rel="stylesheet" id="bootstrap-css" />
-        <link href="../css/widget.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div class="d-flex" id="wrapper">
-            <!-- Sidebar-->
-            <div class="border-end bg-white" id="sidebar-wrapper">
-                <div class="sidebar-heading border-bottom bg-light">Medical Report</div>
-                <div class="list-group list-group-flush" id="menus">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3 active" id="home-menu-tab" data-bs-target="#home-tab" data-bs-toggle="tab" href="#home" role="tab" >About</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="create-menu-tab" data-bs-target="#create-tab" data-bs-toggle="tab" href="#create" role="tab" >Create New Report</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="previous-menu-tab" data-bs-target="#previous-tab" data-bs-toggle="tab" href="#previous" role="tab" >Previous Report</a>
-                </div>
-            </div>
-            <!-- Page content wrapper-->
-            <div id="page-content-wrapper">
-
-
-                <div class="tab-content">
-                    
-
-                    <!-- Home content-->
-                    <div class="container-fluid tab-pane active" role="tabpanel" aria-labelledby="home-tab" id="home-tab" >
-                        <h1 class="mt-4">Simple Sidebar</h1>
-                        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-                        <p>
-                            Make sure to keep all page content within the
-                            <code>#page-content-wrapper</code>
-                            . The top navbar is optional, and just for demonstration. Just create an element with the
-                            <code>#sidebarToggle</code>
-                            ID which will toggle the menu when clicked.
-                        </p>
-                    </div>
-
-
-                    <div class="container-fluid tab-pane" role="tabpanel" aria-labelledby="create-tab" id="create-tab">
-                        <h1 class="mt-4">Create Sidebar</h1>
-                        <!-- <form class="form-floating">
-                            <div class="row g-2">
-                                <div class="col-md">
-                                  <div class="form-floating">
-                                    <input required name="name" type="text" class="form-control" id="floatingInputGrid" placeholder="Hello" >
-                                    <label for="floatingInputGrid">Patient's Name</label>
-                                  </div>
-                                </div>
-                                <div class="col-md">
-                                  <div class="form-floating">
-                                    <select class="form-select" id="floatingSelectGrid" name="gender" required aria-label="Floating label select example">
-                                      <option>Open this select menu</option>
-                                      <option value="M">Male</option>
-                                      <option value="F">Female</option>
-                                      <option value="NB">Non-Binary</option>
-                                    </select>
-                                    <label for="floatingSelectGrid">Gender</label>
-                                  </div>
-                                </div>
-                            </div>
-
-                            <div class="input-group mb-3">
-                                <div class="form-floating">
-                                    <select class="form-select" id="floatingSelectGrid" name="gender" required aria-label="Floating label select example">
-                                        <option >Open this select menu</option>
-                                        <option value="Tab">Tablet</option>
-                                        <option value="Inj.">Injection</option>
-                                        <option value="Syp.">Syrup</option>
-                                    </select>
-                                    <label for="floatingSelectGrid">Type</label>
-                                </div>
-                                <input type="text" class="form-control form-floating" aria-label="Medicine Name">
-                            </div>
-                        </form> -->
-                   
-                                <div class="widget-body mt-5">
-                                    <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="col-sm-12 col-md-3 vrtwiz">
-                                                    <!-- <div class="vrtwiz"> -->
-                                                        <ul class="verticalwiz">
-                                                            <li class="active"  data-bs-target="#step1" role="tab" data-bs-toggle="tab">
-                                                                <a href="#tab1" class="active"> <span class="step">1</span> <span class="title">Basic information</span> </a>
-                                                            </li>
-                                                            <li class="" data-bs-target="#step2" role="tab" data-bs-toggle="tab">
-                                                                <a href="#tab2" > <span class="step">2</span> <span class="title">Billing information</span> </a>
-                                                            </li>
-                                                            <li class="" data-bs-target="#step3" role="tab" data-bs-toggle="tab">
-                                                                <a href="#tab3" > <span class="step">3</span> <span class="title">Domain Setup</span> </a>
-                                                            </li>
-                                                            <li data-bs-target="#step4" role="tab" data-bs-toggle="tab" >
-                                                                <a href="#tab4" > <span class="step">4</span> <span class="title">Save Form</span> </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="clearfix"></div>
-                                                    <!-- </div> -->
-                                                </div>
-                                                <!-- <div class="col-sm-9 col-md-8"> -->
-                                                    <div class="rightab">
-                                                        <div class="tab-content">
-                                                            <div class="tab-pane active" id="step1" role="tabpanel" aria-labelledby="step1"  >
-                                                                <br>
-                                                                <h3><strong>Step 1 </strong> - Basic Information</h3>
-                    
-                                                                <div class="form-actions">
-                                                                    <div class="row">
-                                                                        <div class="col-sm-12">
-                                                                            <ul class="pager wizard no-margin">
-                                                                                <li class="previous disabled">
-                                                                                    <a href="#" class="btn btn-lg btn-default"> Previous </a>
-                                                                                </li>
-                                                                                <li class="next">
-                                                                                    <a href="#" class="btn btn-lg txt-color-darken"> Next </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="tab-pane" id="step2" role="tabpanel" aria-labelledby="step2" >
-                                                                <br>
-                                                                <h3><strong>Step 2</strong> - Billing Information</h3>
-                    
-                                                                <div class="form-actions">
-                                                                    <div class="row">
-                                                                        <div class="col-sm-12">
-                                                                            <ul class="pager wizard no-margin">
-                                                                                <li class="previous">
-                                                                                    <a href="#" class="btn btn-lg btn-default"> Previous </a>
-                                                                                </li>
-                                                                                <li class="next disabled">
-                                                                                    <a href="#" class="btn btn-lg txt-color-darken"> Next </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="tab-pane" id="step3" role="tabpanel" aria-labelledby="step3" >
-                                                                <br>
-                                                                <h3><strong>Step 3</strong> - Domain Setup</h3>
-                                                                <div class="form-actions">
-                                                                    <div class="row">
-                                                                        <div class="col-sm-12">
-                                                                            <ul class="pager wizard no-margin">
-                                                                                <li class="previous">
-                                                                                    <a href="#" class="btn btn-lg btn-default"> Previous </a>
-                                                                                </li>
-                                                                                <li class="next disabled">
-                                                                                    <a href="#" class="btn btn-lg txt-color-darken"> Next </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="tab-pane" id="step4" role="tabpanel" aria-labelledby="step4" >
-                                                                <br>
-                                                                <h3><strong>Step 4</strong> - Save Form</h3>
-                                                                <br>
-                                                                <h1 class="text-center text-success"><strong><i class="fa fa-check fa-lg"></i> Complete</strong></h1>
-                                                                <h4 class="text-center">Click next to finish</h4>
-                                                                <br>
-                                                                <br>
-                                                                <div class="form-actions">
-                                                                    <div class="row">
-                                                                        <div class="col-sm-12">
-                                                                            <ul class="pager wizard no-margin">
-                                                                                <li class="previous">
-                                                                                    <a href="#" class="btn btn-lg btn-default"> Previous </a>
-                                                                                </li>
-                                                                                <li class="next disabled">
-                                                                                    <a href="#" class="btn btn-lg txt-color-darken"> Next </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                     </div>
-                                                <!-- </div> -->
-                                            </div>
-                                    </div>
-                                </div>
-    
-                    </div>
-
-
-                    <div class="container-fluid tab-pane" role="tabpanel" aria-labelledby="previous-tab" id="previous-tab">
-                        <h1 class="mt-4">previous Sidebar</h1>
-                        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-                        <p>
-                            Make sure to keep all page content within the
-                            <code>#page-content-wrapper</code>
-                            . The top navbar is optional, and just for demonstration. Just create an element with the
-                            <code>#sidebarToggle</code>
-                            ID which will toggle the menu when clicked.
-                        </p>
-                    </div>
-
-
-
-
-                </div>
-            </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../css/styles.css" rel="stylesheet" id="bootstrap-css" />
+    <link href="../css/widget.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="d-flex" id="wrapper">
+      <!-- Sidebar-->
+      <div class="border-end bg-white" id="sidebar-wrapper">
+        <div class="sidebar-heading border-bottom bg-light">Medical Report</div>
+        <div class="list-group list-group-flush" id="menus">
+          <a class="list-group-item list-group-item-action list-group-item-light p-3 active" id="home-menu-tab" data-bs-target="#home-tab" data-bs-toggle="tab" role="tab">About</a>
+          <a class="list-group-item list-group-item-action list-group-item-light p-3" id="create-menu-tab" data-bs-target="#create-tab" data-bs-toggle="tab" role="tab">Create New Report</a>
+          <a class="list-group-item list-group-item-action list-group-item-light p-3" id="previous-menu-tab" data-bs-target="#previous-tab" data-bs-toggle="tab" role="tab">Previous Report</a>
         </div>
-
-        <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="../js/jquery.js"></script>
-        <script src="../js/scripts.js"></script>
-        <script>if (window.module) module = window.module;</script>
-    </body>
+      </div>
+      <!-- Page content wrapper-->
+      <div id="page-content-wrapper">
+        <div class="tab-content">
+          <!-- Home content-->
+          <div class="container-fluid tab-pane active" role="tabpanel" aria-labelledby="home-tab" id="home-tab">
+            <h1 class="mt-4">Simple Sidebar</h1>
+            <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+            <p> Make sure to keep all page content within the <code>#page-content-wrapper</code> . The top navbar is optional, and just for demonstration. Just create an element with the <code>#sidebarToggle</code> ID which will toggle the menu when clicked. </p>
+          </div>
+          <div class="container-fluid tab-pane" role="tabpanel" aria-labelledby="create-tab" id="create-tab">
+            <h1 class="mt-4">Create Report</h1>
+            <!-- <form class="form-floating"><div class="row g-2"><div class="col-md"><div class="form-floating"><input required name="name" type="text" class="form-control" id="floatingInputGrid" placeholder="Hello" ><label for="floatingInputGrid">Patient's Name</label></div></div><div class="col-md"><div class="form-floating"><select class="form-select" id="floatingSelectGrid" name="gender" required aria-label="Floating label select example"><option>Open this select menu</option><option value="M">Male</option><option value="F">Female</option><option value="NB">Non-Binary</option></select><label for="floatingSelectGrid">Gender</label></div></div></div><div class="input-group mb-3"><div class="form-floating"><select class="form-select" id="floatingSelectGrid" name="gender" required aria-label="Floating label select example"><option >Open this select menu</option><option value="Tab">Tablet</option><option value="Inj.">Injection</option><option value="Syp.">Syrup</option></select><label for="floatingSelectGrid">Type</label></div><input type="text" class="form-control form-floating" aria-label="Medicine Name"></div></form> -->
+            <div class="widget-body mt-5">
+              <div class="row">
+                <div class="col-md-3 vrtwiz mt-5">
+                  <ul class="verticalwiz">
+                    <li class="active">
+                      <a href="#step1" data-bs-target="#step1" role="tab" data-bs-toggle="tab">
+                        <span class="step">1</span>
+                        <span class="title">Basic information</span>
+                      </a>
+                    </li>
+                    <li class="">
+                      <a href="#step2"  data-bs-target="#step2" role="tab" data-bs-toggle="tab">
+                        <span class="step">2</span>
+                        <span class="title">Tests</span>
+                      </a>
+                    </li>
+                    <li class="">
+                      <a href="#step3" data-bs-target="#step3" role="tab" data-bs-toggle="tab">
+                        <span class="step">3</span>
+                        <span class="title">Prescriptions</span>
+                      </a>
+                    </li>
+                    <li class="">
+                      <a href="#step4"  data-bs-target="#step4" role="tab" data-bs-toggle="tab">
+                        <span class="step">4</span>
+                        <span class="title">Fees</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-9" id="tabs">
+                 
+                    <div class="rightab tab-content">
+                      <div class="tab-pane active" id="step1" role="tabpanel" aria-labelledby="step1">
+                        <br>
+                        <h3>
+                          <strong>Step 1 </strong> - Basic Information
+                        </h3>
+                        <div class="form-actions">
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <ul class="pager wizard no-margin">
+                                <li class="previous disabled">
+                                  <a href="#" class="btn btn-lg btn-default"> Previous </a>
+                                </li>
+                                <li class="next">
+                                  <a href="#" class="btn btn-lg txt-color-darken"> Next </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane" id="step2" role="tabpanel" aria-labelledby="step2">
+                        <br>
+                        <h3>
+                          <strong>Step 2</strong> - Billing Information
+                        </h3>
+                        <div class="form-actions">
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <ul class="pager wizard no-margin">
+                                <li class="previous">
+                                  <a href="#" class="btn btn-lg btn-default"> Previous </a>
+                                </li>
+                                <li class="next disabled">
+                                  <a href="#" class="btn btn-lg txt-color-darken"> Next </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane" id="step3" role="tabpanel" aria-labelledby="step3">
+                        <br>
+                        <h3>
+                          <strong>Step 3</strong> - Domain Setup
+                        </h3>
+                        <div class="form-actions">
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <ul class="pager wizard no-margin">
+                                <li class="previous">
+                                  <a href="#" class="btn btn-lg btn-default"> Previous </a>
+                                </li>
+                                <li class="next disabled">
+                                  <a href="#" class="btn btn-lg txt-color-darken"> Next </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane" id="step4" role="tabpanel" aria-labelledby="step4">
+                        <br>
+                        <h3>
+                          <strong>Step 4</strong> - Save Form
+                        </h3>
+                        <br>
+                        <h1 class="text-center text-success">
+                          <strong>
+                            <i class="fa fa-check fa-lg"></i> Complete </strong>
+                        </h1>
+                        <h4 class="text-center">Click next to finish</h4>
+                        <br>
+                        <br>
+                        <div class="form-actions">
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <ul class="pager wizard no-margin">
+                                <li class="previous">
+                                  <a href="#" class="btn btn-lg btn-default"> Previous </a>
+                                </li>
+                                <li class="next disabled">
+                                  <a href="#" class="btn btn-lg txt-color-darken"> Next </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid tab-pane" role="tabpanel" aria-labelledby="previous-tab" id="previous-tab">
+            <h1 class="mt-4">previous Sidebar</h1>
+            <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+            <p> Make sure to keep all page content within the <code>#page-content-wrapper</code> . The top navbar is optional, and just for demonstration. Just create an element with the <code>#sidebarToggle</code> ID which will toggle the menu when clicked. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      if (typeof module === 'object') {
+        window.module = module;
+        module = undefined;
+      }
+    </script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/scripts.js"></script>
+    <script>
+      if (window.module) module = window.module;
+    </script>
+  </body>
 </html>
